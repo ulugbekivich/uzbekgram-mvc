@@ -14,6 +14,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
 
 if (!app.Environment.IsDevelopment())
 {

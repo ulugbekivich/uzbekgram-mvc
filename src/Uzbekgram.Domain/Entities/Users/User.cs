@@ -14,7 +14,7 @@ namespace Uzbekgram.Domain.Entities.Users
 
         public string Bio { get; set; } = string.Empty;
 
-        public string? Usermame { get; set; }
+        public string? Username { get; set; }
 
 
         public UserStatus userStatus { get; set; }

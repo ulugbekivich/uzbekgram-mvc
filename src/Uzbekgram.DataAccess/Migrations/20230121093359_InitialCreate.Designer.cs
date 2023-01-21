@@ -12,7 +12,7 @@ using Uzbekgram.DataAccess.DbContexts;
 namespace Uzbekgram.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230120185042_InitialCreate")]
+    [Migration("20230121093359_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -160,7 +160,7 @@ namespace Uzbekgram.DataAccess.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("Usermame")
+                    b.Property<string>("Username")
                         .HasColumnType("text");
 
                     b.Property<int>("userStatus")
@@ -168,7 +168,7 @@ namespace Uzbekgram.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Usermame")
+                    b.HasIndex("Username")
                         .IsUnique();
 
                     b.ToTable("Users");
