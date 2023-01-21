@@ -18,7 +18,7 @@ namespace Uzbekgram.DataAccess.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Fullname = table.Column<string>(type: "text", nullable: false),
                     Bio = table.Column<string>(type: "text", nullable: false),
-                    Usermame = table.Column<string>(type: "text", nullable: true),
+                    Username = table.Column<string>(type: "text", nullable: true),
                     userStatus = table.Column<int>(type: "integer", nullable: false),
                     ImagePath = table.Column<string>(type: "text", nullable: false),
                     Email = table.Column<string>(type: "text", nullable: false),
@@ -150,9 +150,9 @@ namespace Uzbekgram.DataAccess.Migrations
                 column: "SenderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_Usermame",
+                name: "IX_Users_Username",
                 table: "Users",
-                column: "Usermame",
+                column: "Username",
                 unique: true);
         }
 
