@@ -19,17 +19,13 @@
 
   <ItemGroup>
     <Folder Include="Dtos\Contacts\" />
-    <Folder Include="Dtos\MediaMessages\" />
-    <Folder Include="Dtos\TextMessages\" />
     <Folder Include="Dtos\Users\" />
     <Folder Include="Interfaces\Contacts\" />
     <Folder Include="Interfaces\MediaMessages\" />
     <Folder Include="Interfaces\TextMessages\" />
-    <Folder Include="Interfaces\Users\" />
     <Folder Include="Services\Contacts\" />
     <Folder Include="Services\MediaMessages\" />
     <Folder Include="Services\TextMessages\" />
-    <Folder Include="Services\Users\" />
   </ItemGroup>
 
 </Project>
