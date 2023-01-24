@@ -15,9 +15,6 @@ namespace Uzbekgram.Service.Dtos.Accounts
         [Required, MaxLength(60), MinLength(1)]
         public string FullName { get; set; } = string.Empty;
 
-        [Required, MaxFileSize(2), AllowedFiles(new string[] { ".jpg", ".png", ".jpeg", ".svg", ".webp" })]
-        public IFormFile? Image { get; set; }
-
         [Required, Email]
         public string Email { get; set; } = string.Empty;
 

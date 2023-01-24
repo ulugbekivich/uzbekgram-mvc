@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6840C733-FFA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1F781013-F665-478D-A385-0B30A026CBF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uzbekgram.Web", "src\Uzbekgram.Web\Uzbekgram.Web.csproj", "{3EDBC2D0-BC05-4114-A12D-093ADA84DF81}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uzbekgram.Domain", "src\Uzbekgram.Domain\Uzbekgram.Domain.csproj", "{395F96F3-ADB4-4671-83AA-D8D3AB6291B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uzbekgram.DataAccess", "src\Uzbekgram.DataAccess\Uzbekgram.DataAccess.csproj", "{176A8831-6B80-4E19-9963-C187978A01E9}"
@@ -19,16 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uzbekgram.UnitTest", "test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uzbekgram.IntegrationTest", "test\Uzbekgram.IntegrationTest\Uzbekgram.IntegrationTest.csproj", "{2117C510-8767-4834-9BF9-64FFCFE0E8FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uzbekgram.Web", "src\Uzbekgram.Web\Uzbekgram.Web.csproj", "{41DDA575-096E-410E-AE55-8F599548F124}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3EDBC2D0-BC05-4114-A12D-093ADA84DF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EDBC2D0-BC05-4114-A12D-093ADA84DF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EDBC2D0-BC05-4114-A12D-093ADA84DF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EDBC2D0-BC05-4114-A12D-093ADA84DF81}.Release|Any CPU.Build.0 = Release|Any CPU
 		{395F96F3-ADB4-4671-83AA-D8D3AB6291B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{395F96F3-ADB4-4671-83AA-D8D3AB6291B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{395F96F3-ADB4-4671-83AA-D8D3AB6291B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,17 +45,21 @@ Global
 		{2117C510-8767-4834-9BF9-64FFCFE0E8FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2117C510-8767-4834-9BF9-64FFCFE0E8FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2117C510-8767-4834-9BF9-64FFCFE0E8FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DDA575-096E-410E-AE55-8F599548F124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DDA575-096E-410E-AE55-8F599548F124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DDA575-096E-410E-AE55-8F599548F124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DDA575-096E-410E-AE55-8F599548F124}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3EDBC2D0-BC05-4114-A12D-093ADA84DF81} = {6840C733-FFAE-4277-A13C-EF3F591EB582}
 		{395F96F3-ADB4-4671-83AA-D8D3AB6291B2} = {6840C733-FFAE-4277-A13C-EF3F591EB582}
 		{176A8831-6B80-4E19-9963-C187978A01E9} = {6840C733-FFAE-4277-A13C-EF3F591EB582}
 		{3CD4BE47-BBB9-4B9F-811B-CF33ED20F342} = {6840C733-FFAE-4277-A13C-EF3F591EB582}
 		{348D7815-74F8-4897-8617-C9D9CDF797F4} = {1F781013-F665-478D-A385-0B30A026CBF5}
 		{2117C510-8767-4834-9BF9-64FFCFE0E8FD} = {1F781013-F665-478D-A385-0B30A026CBF5}
+		{41DDA575-096E-410E-AE55-8F599548F124} = {6840C733-FFAE-4277-A13C-EF3F591EB582}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59AF74C8-CBC7-4E72-A967-1D54C7E020CC}
