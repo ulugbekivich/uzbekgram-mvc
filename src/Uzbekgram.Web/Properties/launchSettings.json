@@ -3,16 +3,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:27063",
-      "sslPort": 44359
+      "applicationUrl": "http://localhost:19278",
+      "sslPort": 44379
     }
   },
   "profiles": {
-    "Uzbekgram.Api": {
+    "Uzbekgram.Web": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7233;http://localhost:5218",
+      "applicationUrl": "https://localhost:7224;http://localhost:5025",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

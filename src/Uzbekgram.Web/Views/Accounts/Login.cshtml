@@ -1,0 +1,47 @@
+﻿@using Uzbekgram.Service.Dtos.Accounts;
+@model AccountLoginDto
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "_AccountLayout.cshtml";
+}
+
+<div class="container">
+    <div class="forms">
+        <div class="form login">
+            <span class="title">Kirish</span>
+
+            <form asp-area="" asp-controller="accounts" asp-action="login" method="post">
+                <div class="input-field">
+                    <input type="text" asp-for=Email placeholder="Emailingizni kiriting" required>
+                    <i class="uil uil-envelope icon"></i>
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="input-field">
+                    <input type="password" asp-for=Password class="password" placeholder="Parolingizni kiriting" required>
+                    <i class="uil uil-lock icon"></i>
+                    <i class="uil uil-eye-slash showHidePw"></i>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <div class="checkbox-text">
+                    <div class="checkbox-content">
+                        <input type="checkbox" id="logCheck">
+                        <label for="logCheck" class="text">Remember me</label>
+                    </div>
+
+                    <a href="#" class="text">Parolni unutdingizmi?</a>
+                </div>
+
+                <div class="input-field button">
+                    <input type="submit" value="Kirish">
+                </div>
+            </form>
+
+            <div class="login-signup">
+                <span class="text">
+                    Hali a'zo emasmisiz?
+                    <a class="text" asp-controller="accounts" asp-action="register">Ro'yhatdan o'tish</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

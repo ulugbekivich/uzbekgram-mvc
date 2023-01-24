@@ -11,14 +11,14 @@ namespace Uzbekgram.Service.Common.Attributes
     {
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
-            if (value is null) return new ValidationResult("Password can not be null!");
+            if (value is null) return new ValidationResult("Parol majburiy!!");
             else
             {
                 string password = value.ToString()!;
                 if (password.Length < 8)
-                    return new ValidationResult("Password must be at least 8 characters!");
+                    return new ValidationResult("Parol eng kamida 8 ta belgidan iborat bo'lishi kerak!");
                 else if (password.Length > 50)
-                    return new ValidationResult("Password must be less than 50 characters!");
+                    return new ValidationResult("Parol 50 ta belgidan kam bo'lishi kerak!");
                 var result = IsStrong(password);
 
                 if (result.IsValid is false) return new ValidationResult(result.Message);
@@ -32,13 +32,13 @@ namespace Uzbekgram.Service.Common.Attributes
             bool isLower = password.Any(x => char.IsLower(x));
             bool isUpper = password.Any(x => char.IsUpper(x));
             if (!isLower)
-                return (IsValid: false, Message: "Password must be at least one lower letter!");
+                return (IsValid: false, Message: "Parolda hech bo'lmaganda 1 ta kichik harf bo'lishi kerak!");
             if (!isUpper)
-                return (IsValid: false, Message: "Password must be at least one upper letter!");
+                return (IsValid: false, Message: "Parolda hech bo'lmaganda 1 ta katta harf bo'lishi kerak!");
             if (!isDigit)
-                return (IsValid: false, Message: "Password must be at least one digit!");
+                return (IsValid: false, Message: "Parolda hech bo'lmaganda 1 ta raqam bo'lishi kerak!");
 
-            return (IsValid: true, Message: "Password is strong");
+            return (IsValid: true, Message: "Kuchli parol!");
         }
     }
 }

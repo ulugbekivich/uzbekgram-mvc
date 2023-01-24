@@ -1,4 +1,4 @@
-namespace Uzbekgram.Api.Models
+namespace Uzbekgram.Web.Models
 {
     public class ErrorViewModel
     {

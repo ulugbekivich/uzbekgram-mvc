@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Uzbekgram.Api.Models;
+using Uzbekgram.Web.Models;
 
-namespace Uzbekgram.Api.Controllers
+namespace Uzbekgram.Web.Controllers
 {
     public class HomeController : Controller
     {
