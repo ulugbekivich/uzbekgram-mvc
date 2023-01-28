@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Uzbekgram.Service.Dtos.Accounts;
-using Uzbekgram.Service.Exceptions;
 using Uzbekgram.Service.Interfaces.Accounts;
 
 namespace Uzbekgram.Web.Controllers
@@ -20,14 +19,14 @@ namespace Uzbekgram.Web.Controllers
             return View("Login");
         }
 
-        [HttpPost("login")]
+        /*[HttpPost("login")]
         public async Task<IActionResult> LoginAsync(AccountLoginDto accountLoginDto)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    /*SendToPhoneNumberDto sendToPhoneNumberDto = new SendToPhoneNumberDto()
+                    SendToPhoneNumberDto sendToPhoneNumberDto = new SendToPhoneNumberDto()
                     {
                         PhoneNumber = accountLoginDto.PhoneNumber,
                     };
@@ -40,7 +39,7 @@ namespace Uzbekgram.Web.Controllers
                     else
                     {
                         return Login();
-                    }*/
+                    }
                 }
                 catch (ModelErrorException modelError)
                 {
@@ -53,7 +52,7 @@ namespace Uzbekgram.Web.Controllers
                 }
             }
             else return Login();
-        }
+        }*/
 
         [HttpGet("register")]
         public ViewResult Register()
