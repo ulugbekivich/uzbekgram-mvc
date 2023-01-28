@@ -2,11 +2,13 @@
 
 namespace Uzbekgram.Web.Controllers
 {
+    [Route("verify")]
     public class VerifyController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("email")]
+        public ViewResult VerifyEmail()
         {
-            return View();
+            return View("VerifyEmail");
         }
     }
 }

@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\VerifyEmail\**" />
+    <Content Remove="Views\VerifyEmail\**" />
+    <EmbeddedResource Remove="Views\VerifyEmail\**" />
+    <None Remove="Views\VerifyEmail\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.12" />
   </ItemGroup>
 
