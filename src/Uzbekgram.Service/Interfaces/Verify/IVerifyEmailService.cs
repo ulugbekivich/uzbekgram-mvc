@@ -11,7 +11,7 @@ namespace Uzbekgram.Service.Interfaces.Verify
     {
         Task<bool> SendCodeAsync(SendCodeToEmailDto sendCodeToEmailDto);
 
-        Task<bool> VerifyEmail(VerifyEmailDto verifyEmailDto);
+        Task<string> VerifyEmail(VerifyEmailDto verifyEmailDto);
 
         Task<bool> VerifyPasswordAsync(ResetPasswordDto resetPasswordDto);
     }

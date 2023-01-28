@@ -5,9 +5,11 @@ using Uzbekgram.DataAccess.Interfaces;
 using Uzbekgram.DataAccess.Repositories;
 using Uzbekgram.Service.Interfaces;
 using Uzbekgram.Service.Interfaces.Accounts;
+using Uzbekgram.Service.Interfaces.Verify;
 using Uzbekgram.Service.Security;
 using Uzbekgram.Service.Services;
 using Uzbekgram.Service.Services.Accounts;
+using Uzbekgram.Service.Services.Verify;
 using Uzbekgram.Web.Configurations.LayerConfigarions;
 using Uzbekgram.Web.Middlewares;
 
@@ -24,6 +26,8 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthManager, AuthManager>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IVerifyEmailService, VerifyEmailService>();
 
 var app = builder.Build();
 

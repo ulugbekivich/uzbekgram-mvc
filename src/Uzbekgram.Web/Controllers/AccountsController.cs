@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Uzbekgram.Service.Dtos.Accounts;
+using Uzbekgram.Service.Dtos.Verify;
+using Uzbekgram.Service.Exceptions;
 using Uzbekgram.Service.Interfaces.Accounts;
+using Uzbekgram.Service.Interfaces.Verify;
 
 namespace Uzbekgram.Web.Controllers
 {
@@ -8,9 +11,13 @@ namespace Uzbekgram.Web.Controllers
     public class AccountsController : Controller
     {
         private readonly IAccountService _service;
-        public AccountsController(IAccountService acccountService)
+        private readonly IVerifyEmailService _verify;
+
+        public AccountsController(IAccountService acccountService,
+                                  IVerifyEmailService verify)
         {
             this._service = acccountService;
+            this._verify = verify;
         }
 
         [HttpGet("login")]
@@ -19,21 +26,21 @@ namespace Uzbekgram.Web.Controllers
             return View("Login");
         }
 
-        /*[HttpPost("login")]
+        [HttpPost("login")]
         public async Task<IActionResult> LoginAsync(AccountLoginDto accountLoginDto)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    SendToPhoneNumberDto sendToPhoneNumberDto = new SendToPhoneNumberDto()
+                    SendCodeToEmailDto sendCodeToEmailDto = new SendCodeToEmailDto()
                     {
-                        PhoneNumber = accountLoginDto.PhoneNumber,
+                        Email = accountLoginDto.Email 
                     };
-                    bool res = await _verify.SendCodeAsync(sendToPhoneNumberDto);
+                    bool res = await _verify.SendCodeAsync(sendCodeToEmailDto);
                     if (res)
                     {
-                        TempData["tel"] = accountLoginDto.PhoneNumber;
+                        TempData["email"] = accountLoginDto.Email;
                         return RedirectToAction("VerifyEmail", "verify", new { area = "" });
                     }
                     else
@@ -52,7 +59,7 @@ namespace Uzbekgram.Web.Controllers
                 }
             }
             else return Login();
-        }*/
+        }
 
         [HttpGet("register")]
         public ViewResult Register()
@@ -65,10 +72,37 @@ namespace Uzbekgram.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 bool result = await _service.AccountRegisterAsync(accountRegisterDto);
                 if (result)
                 {
-                    return RedirectToAction("login", "accounts", new { area = "" });
+                    try
+                    {
+                        SendCodeToEmailDto sendCodeToEmailDto = new SendCodeToEmailDto()
+                        {
+                            Email = accountRegisterDto.Email
+                        };
+                        bool res = await _verify.SendCodeAsync(sendCodeToEmailDto);
+                        if (res)
+                        {
+                            TempData["email"] = accountRegisterDto.Email;
+                            return RedirectToAction("VerifyEmail", "verify", new { area = "" });
+                        }
+                        else
+                        {
+                            return Login();
+                        }
+                    }
+                    catch (ModelErrorException modelError)
+                    {
+
+                        ModelState.AddModelError(modelError.Property, modelError.Message);
+                        return Login();
+                    }
+                    catch
+                    {
+                        return Login();
+                    }
                 }
                 else
                 {

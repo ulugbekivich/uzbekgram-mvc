@@ -10,9 +10,9 @@
         <div class="form login">
             <span class="title">Emailni tasdiqlash</span>
 
-            <form asp-area="" asp-controller="verify" asp-action="verifyemail" method="post">
+            <form asp-area="" asp-controller="Verify" asp-action="VerifyEmail" method="post">
                 <div class="input-field">
-                    <input type="text" asp-for=Email placeholder="Emailingizni kiriting" required>
+                    <input type="text" asp-for=Email placeholder="Emailingizni kiriting" value="@TempData["email"]" readonly="readonly" required>
                     <i class="uil uil-envelope icon"></i>
                 </div>
                 <span asp-validation-for="Email" class="text-danger"></span>
