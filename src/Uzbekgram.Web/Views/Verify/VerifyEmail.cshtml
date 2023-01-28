@@ -1,0 +1,31 @@
+﻿@using Uzbekgram.Service.Dtos.Verify;
+@model VerifyEmailDto
+@{
+    ViewData["Title"] = "Verify Page";
+    Layout = "../Accounts/_AccountLayout.cshtml";
+}
+
+<div class="container">
+    <div class="forms h-75">
+        <div class="form login">
+            <span class="title">Emailni tasdiqlash</span>
+
+            <form asp-area="" asp-controller="verify" asp-action="verifyemail" method="post">
+                <div class="input-field">
+                    <input type="text" asp-for=Email placeholder="Emailingizni kiriting" required>
+                    <i class="uil uil-envelope icon"></i>
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <div class="input-field">
+                    <input type="number" asp-for=Code placeholder="Kodni kiriting" required>
+                    <i class="uil uil-lock icon"></i>
+                </div>
+                <span asp-validation-for="Code" class="text-danger"></span>
+
+                <div class="input-field button">
+                    <input type="submit" value="Yuborish">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

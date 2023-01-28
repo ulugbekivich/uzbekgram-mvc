@@ -19,6 +19,41 @@ namespace Uzbekgram.Web.Controllers
             return View("Login");
         }
 
+        /*[HttpPost("login")]
+        public async Task<IActionResult> LoginAsync(AccountLoginDto accountLoginDto)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    SendToPhoneNumberDto sendToPhoneNumberDto = new SendToPhoneNumberDto()
+                    {
+                        PhoneNumber = accountLoginDto.PhoneNumber,
+                    };
+                    bool res = await _verify.SendCodeAsync(sendToPhoneNumberDto);
+                    if (res)
+                    {
+                        TempData["tel"] = accountLoginDto.PhoneNumber;
+                        return RedirectToAction("VerifyEmail", "verify", new { area = "" });
+                    }
+                    else
+                    {
+                        return Login();
+                    }
+                }
+                catch (ModelErrorException modelError)
+                {
+                    ModelState.AddModelError(modelError.Property, modelError.Message);
+                    return Login();
+                }
+                catch
+                {
+                    return Login();
+                }
+            }
+            else return Login();
+        }*/
+
         [HttpGet("register")]
         public ViewResult Register()
         {
