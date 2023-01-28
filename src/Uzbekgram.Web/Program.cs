@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 using Uzbekgram.DataAccess.DbContexts;
 using Uzbekgram.DataAccess.Interfaces;
 using Uzbekgram.DataAccess.Repositories;
@@ -7,8 +8,12 @@ using Uzbekgram.Service.Interfaces.Accounts;
 using Uzbekgram.Service.Security;
 using Uzbekgram.Service.Services;
 using Uzbekgram.Service.Services.Accounts;
+using Uzbekgram.Web.Configurations.LayerConfigarions;
+using Uzbekgram.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddWeb(builder.Configuration);
+
 
 builder.Services.AddControllersWithViews();
 
@@ -34,6 +39,16 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseStatusCodePages(async context =>
+{
+    if (context.HttpContext.Response.StatusCode == (int)HttpStatusCode.Unauthorized)
+    {
+        context.HttpContext.Response.Redirect("accounts/login");
+    }
+});
+app.UseMiddleware<TokenRedirectMiddleware>();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.UseAuthorization();
 

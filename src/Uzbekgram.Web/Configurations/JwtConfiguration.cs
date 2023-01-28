@@ -6,10 +6,10 @@ namespace Uzbekgram.Web.Configurations
 {
     public static class JwtConfiguration
     {
-        public static void ConfigureAuth(this WebApplicationBuilder builder)
+        public static void ConfigureAuth(this IServiceCollection services, IConfiguration configuration)
         {
-            var _config = builder.Configuration.GetSection("Jwt");
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            var _config = configuration.GetSection("Jwt");
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
               .AddJwtBearer(options =>
               {
                   options.TokenValidationParameters = new TokenValidationParameters()
