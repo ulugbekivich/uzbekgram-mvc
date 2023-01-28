@@ -26,7 +26,10 @@ namespace Uzbekgram.Service.Security
             var claims = new[]
             {
             new Claim("Id", user.Id.ToString()),
-            new Claim("Fullname", user.Fullname)
+            new Claim("Fullname", user.Fullname),
+            new Claim("Email", user.Email),
+            new Claim("ImagePath", (user.ImagePath is null)?"":user.ImagePath),
+            new Claim("Status", user.userStatus.ToString())
         };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["SecretKey"]));

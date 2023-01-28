@@ -16,6 +16,7 @@ using Uzbekgram.Web.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddWeb(builder.Configuration);
 
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
 
