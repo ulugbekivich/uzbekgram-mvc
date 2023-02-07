@@ -23,8 +23,6 @@
   <ItemGroup>
     <Folder Include="Dtos\Contacts\" />
     <Folder Include="Dtos\Users\" />
-    <Folder Include="Interfaces\Contacts\" />
-    <Folder Include="Services\Contacts\" />
   </ItemGroup>
 
 </Project>
